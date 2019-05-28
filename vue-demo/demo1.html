@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <p v-text="message"></p>
+        <p v-html="message2"></p>
+        <p v-bind:title="message3">鼠标悬停几秒查看此处动态绑定信息</p>
+        <p v-bind:title="'我是：'+message3">鼠标悬停几秒查看此处动态绑定信息</p>
+        <!-- v-on 简写：:click --> 
+        <p :title="message3">鼠标悬停几秒查看此处动态绑定信息</p>
+        <button v-on:click="switchApp">逆转消息</button>
+        <div>
+            <button v-on:click="dianji">点击</span>
+            <button :click="countor =+1">{{countor}}</button>
+        </div>
+        <!-- v-model 简写：@click -->
+        <div>
+            <input type="text" v-model="message"/>
+        </div>
+        <!-- v-for -->
+        <div>
+            <ol>
+                <li v-for="item in arr">{{ item.text }}</li>
+            </ol>
+        </div>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'我是袁金地',
+            message2:'<p>v-html:我是袁金地！</p>',
+            message3:'页面加载与' + new Date().toLocaleString(),
+            countor:0,
+            arr:[
+                {text:'买菜'},
+                {text:'打游戏'},
+                {text:'学习'}
+            ],
+        },
+        methods:{
+            switchApp: function () {
+                this.message = this.message.split('').reverse().join('')
+            },
+            dianji: function(){
+                alert("我是点击出来的")
+            }
+
+        }
+    })
+</script>
+</html>

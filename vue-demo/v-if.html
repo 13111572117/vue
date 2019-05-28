@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-if="seen">现在你看到我了</p>
+        <p v-else>Now you can`t</p>
+        <p v-show="sroc">现在你看到我了</p>
+        <p v-for="(todo,index) in message">
+            键：{{index+1}}---值:{{todo.text}}
+        </p>
+        <p v-for="volue of message">{{message.text}}</p>
+        <ol>
+            <!-- 创建一个 todo-item 组件的实例 -->
+            <todo-item></todo-item>
+        </ol>
+    </div>
+</body>
+<script>
+    Vue.component('todo-item', {
+        // todo-item 组件现在接受一个
+        // "prop"，类似于一个自定义特性。
+        // 这个 prop 名为 todo。
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:[
+                {text:'买菜'},
+                {text:'打游戏'},
+                {text:'学习'},
+            ],
+            seen:false,
+            // sroc:false
+            sroc:true
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>
