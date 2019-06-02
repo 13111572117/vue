@@ -1,6 +1,6 @@
 <template>
     <div id="nowplaying">
-        以下跳转至text按钮
+        以下跳转至text内容
 
         <ul>
             <li v-for="(item,index) in list" :key="index" @click="handleClick(index)">

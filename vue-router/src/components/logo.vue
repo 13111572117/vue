@@ -1,11 +1,11 @@
 <template>
     <div id="logo">
-        我是logo按钮
+        <img src="../assets/logo.png" alt="">
     </div>
 </template>
 <script>
     export default {
-        name: "goodList"
+        name: "logo"
     }
 </script>
 <style>

@@ -1,6 +1,6 @@
 <template>
     <div id="text">
-        我是text按钮--{{$route.params.id}}
+        我是text内容--{{$route.params.id}}
     </div>
 </template>
 

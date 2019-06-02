@@ -9,7 +9,6 @@
             <router-view></router-view>
         </header>
         <footers></footers>
-        <mycom2></mycom2>
     </div>
 </template>
 
@@ -18,15 +17,24 @@
 
     export default {
         name: 'app',
+        data(){
+            return{
+                shows: 1
+            }
+        },
         methods: {
+            changeTab(index){
+                console.log(123)
+                this.shows = index;
+                console.log(this.shows);
+            }
         },
         components: {
             'footers': footers,
-            'mycom2':mycom2
         },
-        // Vue.component('mycom2',{
-
-    // })
+        mounted() {
+            console.log()
+        }
     }
 </script>
 
@@ -34,7 +42,6 @@
     #app {
         width: 100%;
         text-align: center;
-        background-color: red;
     }
 
     #app header {
@@ -42,8 +49,7 @@
         padding-right: 0;
         background-color: darkorange;
     }
-
-    #app header > a {
+    header > a {
         text-decoration: none;
         float: left;
         width: 15%;
@@ -53,9 +59,11 @@
 
     #app header > a:nth-of-type(1) {
         margin-left: 20%;
+    }
+    .router-link-active{
+        color: #fff;
         background-color: rgb(143, 226, 208);
     }
-
     #app header > div {
         float: left;
         background-color: #e2e3dd;

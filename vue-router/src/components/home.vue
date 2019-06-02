@@ -2,7 +2,7 @@
     <div id="home">
         <!--    路由容器-->
         <router-view></router-view>
-        <p>我是home按钮</p>
+        <p>我是home内容</p>
     </div>
 </template>
 <script>

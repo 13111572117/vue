@@ -16,35 +16,29 @@ export default new VueRouter ({
             path:'/',
             redirect: {name:'logo'}
             // redirect:'/home'
-        },
-        {
+        }, {
             path:'/logo',
             component: Logo,
             name:'logo'
-        },
-        {
+        }, {
             path:'/home',
             component:Home,
             children:[
                 {
                     path:'/',
                     redirect: 'now-playing'
-                },
-                {
+                },{
                     path:'now-playing',
                     component:NowPlaying
-                },
-                {
+                },{
                     path:'now-learning',
                     component:NowLearning
                 },
             ]
-        },
-        {
+        }, {
             path:'/chat',
             component:Chat
-        },
-        {
+        }, {
             path:'/text/:id',
             component:Text
         }

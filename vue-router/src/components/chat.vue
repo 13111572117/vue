@@ -1,6 +1,6 @@
 <template>
     <div id="chat">
-        我是chat按钮
+        我是chat内容
     </div>
 </template>
 
