@@ -24,9 +24,9 @@
         },
         methods: {
             changeTab(index){
-                console.log(123)
+                // console.log(123)
                 this.shows = index;
-                console.log(this.shows);
+                // console.log(this.shows);
             }
         },
         components: {
